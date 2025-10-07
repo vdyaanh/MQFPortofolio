@@ -41,13 +41,13 @@ body {
 
 /* GANTI URL GAMBAR DI BAWAH INI */
 .mohan {
-    background-image: url('images/mohan.png');
+    background-image: url('mohan.png');
 }
 .aqeela {
-    background-image: url('images/moqeel.png');
+    background-image: url('moqeel.png');
 }
 .moqeel {
-    background-image: url('images/aqeela.png');
+    background-image: url('aqeela.png');
 }
 
 /* Konten di dalam setiap bagian */
@@ -331,4 +331,5 @@ body {
         font-size: 8vw; /* Perbesar sedikit di mobile */
         letter-spacing: 0.2em; /* Kurangi jarak antar huruf */
     }
+
 }
