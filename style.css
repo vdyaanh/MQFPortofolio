@@ -1,0 +1,334 @@
+/* Pengaturan Dasar */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    /* overflow: hidden; sudah tidak perlu karena layout diatur Bootstrap */
+}
+
+/* Styling untuk setiap bagian kolom */
+.hero-part {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: flex-grow 0.7s ease; /* Transisi untuk efek hover */
+    overflow: hidden;
+}
+
+/* EFEK HOVER KUSTOM */
+/* Saat kursor di atas kolom di layar besar (lg) atau lebih */
+@media (min-width: 992px) {
+    .hero-part:hover {
+        flex-grow: 2.5; /* Perbesar kolom yang di-hover */
+    }
+}
+
+
+/* Lapisan Gelap (Overlay) untuk setiap bagian */
+.hero-part::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+    transition: background 0.7s ease;
+}
+
+.hero-part:hover::before {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+}
+
+/* GANTI URL GAMBAR DI BAWAH INI */
+.mohan {
+    background-image: url('images/mohan.png');
+}
+.aqeela {
+    background-image: url('images/moqeel.png');
+}
+.moqeel {
+    background-image: url('images/aqeela.png');
+}
+
+/* Konten di dalam setiap bagian */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    color: #eae0d5;
+}
+
+/* Styling kustom untuk tombol pink */
+.btn-pink {
+    border-color: #003459;
+    color: #003459;
+    font-weight: 100;
+    font-size: 13px;
+    border-radius: 35px;
+    background-color: #eae0d5;
+    font-weight: bold;
+}
+
+.btn-pink:hover {
+    background-color: #003459;
+    border-color: #05668d;
+    color: #fff;
+}
+
+/* ========================================= */
+/* Gaya untuk Halaman Baru (About Me)        */
+/* ========================================= */
+
+.about-page {
+    /* Memberi warna latar belakang putih, jika sebelumnya berbeda */
+    background-color: #fff;
+    color: #333; /* Warna teks utama menjadi gelap */
+}
+
+/* Kustomisasi Navbar untuk halaman ini */
+.about-page .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.about-page .navbar-brand {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #212529;
+}
+
+.about-page .nav-link {
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-left: 1rem;
+}
+.about-page .nav-link:hover {
+    color: #000;
+}
+
+/* Gaya untuk barisan ikon sosial di kiri */
+.social-bar {
+    position: fixed;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar ikon */
+    z-index: 100;
+}
+
+.social-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.social-bar a:hover {
+    background-color: #ff007f; /* Warna pink dari desain sebelumnya */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+/* Penyesuaian konten utama */
+.content-container {
+    padding-top: 100px; /* Jarak dari navbar */
+    padding-bottom: 50px;
+}
+
+.about-page h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.about-page p {
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-page .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.about-page a {
+    color: #ff007f;
+    font-weight: 700;
+    text-decoration: none;
+}
+.about-page a:hover {
+    text-decoration: underline;
+}
+
+/* Mengatur agar gambar tidak terlalu menempel pada teks di layar mobile */
+@media (max-width: 767px) {
+    .content-container .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* ========================================= */
+/* Gaya untuk Bagian Jejak Karir             */
+/* ========================================= */
+
+.career-section {
+    padding: 80px 0;
+}
+
+.career-section h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #000;
+}
+
+.experience-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.experience-item .year-badge {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #ff007f; /* Warna pink khas */
+    min-width: 150px;
+    padding-right: 25px;
+    font-size: 1.1em;
+}
+
+.experience-item .details h5 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: #212529;
+    margin-bottom: 0.25rem;
+}
+
+.experience-item .details .company {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #6c757d;
+    margin-bottom: 0.75rem;
+}
+
+.experience-item .details .description {
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Penyesuaian untuk layar mobile */
+@media (max-width: 767px) {
+    .experience-item {
+        flex-direction: column; /* Susun ke bawah */
+        gap: 15px;
+    }
+
+    .experience-item .year-badge {
+        padding-right: 0;
+        min-width: auto;
+    }
+}
+
+/* ========================================= */
+/* Gaya untuk Footer                         */
+/* ========================================= */
+
+.site-footer {
+    background-color: #f8f9fa; /* Warna abu-abu sangat muda */
+    border-top: 1px solid #e9ecef;
+}
+
+.site-footer p {
+    font-family: 'Roboto', sans-serif;
+    color: #6c757d; /* Warna teks abu-abu */
+    font-size: 0.9em;
+}
+
+
+/* ========================================= */
+/* Gaya untuk Halaman "Coming Soon"          */
+/* ========================================= */
+
+.coming-soon-page {
+    /* Menghapus semua gaya dari .about-page jika ada */
+    background-color: #1d2b3a; /* Warna dasar jika animasi tidak didukung */
+    overflow: hidden; /* Mencegah scroll */
+    color: #fff;
+
+    /* Animasi Gradien Latar Belakang */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Keyframes untuk animasi gradien latar belakang */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tinggi penuh layar */
+    text-align: center;
+}
+
+.coming-soon-container h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 5vw; /* Ukuran font responsif berdasarkan lebar layar */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5em; /* Jarak antar huruf */
+    
+    /* Animasi Bersinar (Pulse) */
+    animation: pulseText 2s infinite;
+}
+
+/* Keyframes untuk animasi teks bersinar */
+@keyframes pulseText {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Media query untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+    .coming-soon-container h1 {
+        font-size: 8vw; /* Perbesar sedikit di mobile */
+        letter-spacing: 0.2em; /* Kurangi jarak antar huruf */
+    }
+}
